@@ -1,0 +1,46 @@
+{
+    "posts": [
+         {
+    "province": "Bali",
+    "city": "Badung",
+    "district": "Kuta Selatan",
+    "subdistrict": "Ungasan",
+    "postal_code": "80361"
+  },
+  {
+    "province": "Bali",
+    "city": "Badung",
+    "district": "Kuta",
+    "subdistrict": "Tuban",
+    "postal_code": "80361"
+  },
+  {
+    "province": "Bali",
+    "city": "Badung",
+    "district": "Kuta Utara",
+    "subdistrict": "Tibubeneng",
+    "postal_code": "80361"
+  },
+  {
+    "province": "Bali",
+    "city": "Badung",
+    "district": "Kuta Utara",
+    "subdistrict": "Tibubeneng",
+    "postal_code": "80361"
+  },
+  {
+    "province": "Bali",
+    "city": "Badung",
+    "district": "Kuta Utara",
+    "subdistrict": "Tibubeneng",
+    "postal_code": "80361"
+  },
+  {
+    "province": "Bali",
+    "city": "Badung",
+    "district": "Kuta Utara",
+    "subdistrict": "Tibubeneng",
+    "postal_code": "80361"
+  }
+    ]
+}
