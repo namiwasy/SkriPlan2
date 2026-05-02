@@ -7,7 +7,7 @@ export default function page() {
   return (
     <div className='h-screen flex flex-col'>
       <Navbar6 />
-      <div className='flex-1 flex' style={{ background: 'linear-gradient(to right, #B8D8F0 0%, #E8E0D0 33%, #FFEDD4 100%)' }}>
+      <div className='flex-1 flex'>
         {/* Left Section */}
         <div className='w-1/3 flex flex-col items-center justify-center mt-10'>
           <img src="/assets/Skriplannobg.png" alt="About" className='h-65 w-60 mb-4' />

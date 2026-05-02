@@ -36,7 +36,7 @@ export default function page() {
       <div className='px-12 pb-12 flex flex-col gap-8 relative z-10'>
 
         {/* Progress mahasiswa */}
-        <div className="flex flex-col bg-white h-108 w-290 border-2 border-[#1E3E62] rounded-2xl p-8 shadow-2xl overflow-hidden">
+        <div className="flex flex-col bg-white h-108 w-290 border border-[#1E3E62] rounded-2xl p-8 shadow-2xl overflow-hidden">
 
           <div className='flex items-center gap-3 mb-6'>
             <img src="/assets/checkmark.png" className="w-10 h-10" />
@@ -58,20 +58,23 @@ export default function page() {
               <div className=' flex bg-[#F3F6FB] h-12 w-full border border-[#1E3E62] mt-5 rounded-2xl'>
                 <img src="/assets/inprogress.png" className="w-6 h-6 m-3" />
                 <h2 className="text-[#1E3E62] mt-3">Proposal Penelitian </h2>
+                <span className='text-[#1E3E62] mt-3 ml-auto mr-4'>0/3 pertemuan</span>
               </div>
 
               <div className=' flex bg-[#F3F6FB] h-12 w-full border border-[#1E3E62] mt-5 rounded-2xl'>
                 <img src="/assets/inprogress.png" className="w-6 h-6 m-3" />
                 <h2 className="text-[#1E3E62] mt-3">Hasil Penelitian </h2>
+                <span className='text-[#1E3E62] mt-3 ml-auto mr-4'>0/3 pertemuan</span>
               </div>
 
               <div className=' flex bg-[#F3F6FB] h-12 w-full border border-[#1E3E62] mt-5 rounded-2xl'>
                 <img src="/assets/inprogress.png" className="w-6 h-6 m-3" />
                 <h2 className="text-[#1E3E62] mt-3">Penyusunan Skripsi </h2>
+                <span className='text-[#1E3E62] mt-3 ml-auto mr-4'>0/1 pertemuan</span>
               </div>
             </div>
              
-              <div className="bg-white  h-108 w-290 border-2 border-[#1E3E62] rounded-2xl p-8 shadow-2xl">
+              <div className="bg-white  h-108 w-290 border border-[#1E3E62] rounded-2xl p-8 shadow-2xl">
 
             <div className='flex items-center justify-between mb-6'>
               <div className='flex items-center gap-3'>
@@ -81,7 +84,7 @@ export default function page() {
               </div>
               <button 
               onClick={() => router.push('/Skriplan/User/Penjadwalan')}
-              className='bg-gradient-to-b from-[#FF7418] to-[#FDDC95] h-12 w-35 rounded-2xl border-2 border-[#1E3E62] flex items-center gap-2 shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer '>
+              className='bg-gradient-to-b from-[#FF7418] to-[#FDDC95] h-12 w-35 rounded-2xl border border-[#1E3E62] flex items-center gap-2 shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer '>
                 <img src="/assets/addicons.png" className="w-6 h-6 ml-3" />
                 <h2 className="text-xl text-[#1E3E62] font-semibold">Ajukan</h2>
               </button>
@@ -90,7 +93,7 @@ export default function page() {
             {/* Scrollable Cards Container */}
             <div className='flex flex-col gap-4 max-h-80 overflow-y-auto pr-2'>
               {/* Card 1 */}
-              <div className='bg-[#F3F6FB] border-2 border-[#1E3E62] rounded-2xl p-6'>
+              <div className='bg-[#F3F6FB] border border-[#1E3E62] rounded-2xl p-6'>
                 <h3 className='text-lg font-bold text-[#1E3E62] mb-4'>Belum ada jadwal konsultasi</h3>
                 <div className='flex items-center gap-3 mb-3'>
                   <img src="/assets/scheduleicon.png" className="w-6 h-6" />
@@ -101,7 +104,7 @@ export default function page() {
               </div>
 
               {/* Card 2 */}
-              <div className='bg-[#F3F6FB] border-2 border-[#1E3E62] rounded-2xl p-6'>
+              <div className='bg-[#F3F6FB] border border-[#1E3E62] rounded-2xl p-6'>
                 <h3 className='text-lg font-bold text-[#1E3E62] mb-4'>Belum ada jadwal konsultasi</h3>
                 <div className='flex items-center gap-3 mb-3'>
                   <img src="/assets/scheduleicon.png" className="w-6 h-6" />
@@ -112,7 +115,7 @@ export default function page() {
               </div>
 
               {/* Card 3 */}
-              <div className='bg-[#F3F6FB] border-2 border-[#1E3E62] rounded-2xl p-6'>
+              <div className='bg-[#F3F6FB] border border-[#1E3E62] rounded-2xl p-6'>
                 <h3 className='text-lg font-bold text-[#1E3E62] mb-4'>Belum ada jadwal konsultasi</h3>
                 <div className='flex items-center gap-3 mb-3'>
                   <img src="/assets/scheduleicon.png" className="w-6 h-6" />
@@ -123,7 +126,7 @@ export default function page() {
               </div>
 
               {/* Card 4 */}
-              <div className='bg-[#F3F6FB] border-2 border-[#1E3E62] rounded-2xl p-6'>
+              <div className='bg-[#F3F6FB] border border-[#1E3E62] rounded-2xl p-6'>
                 <h3 className='text-lg font-bold text-[#1E3E62] mb-4'>Belum ada jadwal konsultasi</h3>
                 <div className='flex items-center gap-3 mb-3'>
                   <img src="/assets/scheduleicon.png" className="w-6 h-6" />
@@ -134,7 +137,7 @@ export default function page() {
               </div>
 
               {/* Card 5 */}
-              <div className='bg-[#F3F6FB] border-2 border-[#1E3E62] rounded-2xl p-6'>
+              <div className='bg-[#F3F6FB] border border-[#1E3E62] rounded-2xl p-6'>
                 <h3 className='text-lg font-bold text-[#1E3E62] mb-4'>Belum ada jadwal konsultasi</h3>
                 <div className='flex items-center gap-3 mb-3'>
                   <img src="/assets/scheduleicon.png" className="w-6 h-6" />
@@ -145,7 +148,7 @@ export default function page() {
               </div>
 
               {/* Card 6 */}
-              <div className='bg-[#F3F6FB] border-2 border-[#1E3E62] rounded-2xl p-6'>
+              <div className='bg-[#F3F6FB] border border-[#1E3E62] rounded-2xl p-6'>
                 <h3 className='text-lg font-bold text-[#1E3E62] mb-4'>Belum ada jadwal konsultasi</h3>
                 <div className='flex items-center gap-3 mb-3'>
                   <img src="/assets/scheduleicon.png" className="w-6 h-6" />

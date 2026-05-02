@@ -1,146 +1,13 @@
 'use client'
 
-import React, { useMemo, useState } from 'react'
+import React from 'react'
 import Navbaruser from '../../../Component/navbaruser'
-
+import { useRouter } from 'next/navigation'
 
 export default function Page() {
-  const [selectedTahap, setSelectedTahap] = useState('')
-  const [selectedJam, setSelectedJam] = useState('')
-  const [selectedTanggal, setSelectedTanggal] = useState<number | null>(7)
-  const [catatan, setCatatan] = useState('')
-
-  // progress tahapan
-  const [progress, setProgress] = useState({
-    proposal: 0,
-    hasil: 0,
-    skripsi: 0,
-  })
-
-  // kalender Januari 2026
-  const days = ['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Min']
-
-  {/* kalender Mei 2026 */}
-const dates = [
-  { day: 27, faded: true, valid: false },
-  { day: 28, faded: true, valid: false },
-  { day: 29, faded: true, valid: false },
-  { day: 30, faded: true, valid: false },
-
-  { day: 1, faded: false, valid: true }, // Jumat
-  { day: 2, faded: true, valid: false },
-  { day: 3, faded: true, valid: false },
-
-  { day: 4, faded: true, valid: false },
-  { day: 5, faded: true, valid: false },
-
-  { day: 6, faded: false, valid: true }, // Rabu
-
-  { day: 7, faded: true, valid: false },
-
-  { day: 8, faded: false, valid: true }, // Jumat
-
-  { day: 9, faded: true, valid: false },
-  { day: 10, faded: true, valid: false },
-
-  { day: 11, faded: true, valid: false },
-  { day: 12, faded: true, valid: false },
-
-  { day: 13, faded: false, valid: true }, // Rabu
-
-  { day: 14, faded: true, valid: false },
-
-  { day: 15, faded: false, valid: true }, // Jumat
-
-  { day: 16, faded: true, valid: false },
-  { day: 17, faded: true, valid: false },
-
-  { day: 18, faded: true, valid: false },
-  { day: 19, faded: true, valid: false },
-
-  { day: 20, faded: false, valid: true }, // Rabu
-
-  { day: 21, faded: true, valid: false },
-
-  { day: 22, faded: false, valid: true }, // Jumat
-
-  { day: 23, faded: true, valid: false },
-  { day: 24, faded: true, valid: false },
-
-  { day: 25, faded: true, valid: false },
-  { day: 26, faded: true, valid: false },
-
-  { day: 27, faded: false, valid: true }, // Rabu
-
-  { day: 28, faded: true, valid: false },
-
-  { day: 29, faded: false, valid:true }, // Jumat
-
-  { day: 30, faded: true, valid: false },
-  { day: 31, faded: true, valid: false },
-]
-  const jamList = [
-    '10:00 - 11:00',
-    '11:00 - 12:00',
-    '13:00 - 14:00',
-    '14:00 - 15:00',
-  ]
-
-  // dropdown bertahap
-  const tahapan = useMemo(() => {
-    const result = []
-
-    if (progress.proposal < 3) {
-      result.push('Proposal Penelitian')
-    }
-
-    if (progress.proposal === 3 && progress.hasil < 3) {
-      result.push('Hasil Penelitian')
-    }
-
-    if (
-      progress.proposal === 3 &&
-      progress.hasil === 3 &&
-      progress.skripsi < 1
-    ) {
-      result.push('Penyusunan Skripsi')
-    }
-
-    return result
-  }, [progress])
-
-  const handleSubmit = () => {
-    if (!selectedTahap || !selectedJam || !selectedTanggal) {
-      alert('Lengkapi data terlebih dahulu')
-      return
-    }
-
-    if (selectedTahap === 'Proposal Penelitian') {
-      setProgress((prev) => ({
-        ...prev,
-        proposal: prev.proposal + 1,
-      }))
-    }
-
-    if (selectedTahap === 'Hasil Penelitian') {
-      setProgress((prev) => ({
-        ...prev,
-        hasil: prev.hasil + 1,
-      }))
-    }
-
-    if (selectedTahap === 'Penyusunan Skripsi') {
-      setProgress((prev) => ({
-        ...prev,
-        skripsi: prev.skripsi + 1,
-      }))
-    }
-
-    alert('Pengajuan berhasil')
-  }
-
+  const router = useRouter();
   return (
-    <div className="relative w-full h-[588px]  font-poppins">
+    <div className="relative w-full h-[588px] font-poppins">
       {/* Background */}
       <img
         src="/assets/phinisi.jpg"
@@ -156,11 +23,12 @@ const dates = [
       <div className="relative z-10 px-10 pt-18">
         {/* Header */}
         <div className="flex items-center gap-3 ml-2">
-           <img src="/assets/leftarrow.png"
-        alt="About"
-        className='h-10 w-10 mt-  cursor-pointer hover:scale-110 transition-all duration-300'
-        
-      />
+          <img
+            src="/assets/leftarrow.png"
+            alt="About"
+            className="h-10 w-10 cursor-pointer hover:scale-110 transition-all duration-300"
+            onClick={() => router.push("/Skriplan/User/Homepageuser")}
+          />
 
           <h1 className="text-[32px] font-bold text-[#232379]">
             Jadwal <span className="text-[#FF7A00]">Konsultasi</span>
@@ -190,64 +58,94 @@ const dates = [
 
             {/* Days */}
             <div className="grid grid-cols-7 text-center mb-4">
-              {days.map((day) => (
-                <p
-                  key={day}
-                  className="font-semibold text-[#232379] text-[16px]"
-                >
-                  {day}
-                </p>
-              ))}
+              <p className="font-semibold text-[#232379] text-[16px]">Sen</p>
+              <p className="font-semibold text-[#232379] text-[16px]">Sel</p>
+              <p className="font-semibold text-[#232379] text-[16px]">Rab</p>
+              <p className="font-semibold text-[#232379] text-[16px]">Kam</p>
+              <p className="font-semibold text-[#232379] text-[16px]">Jum</p>
+              <p className="font-semibold text-[#232379] text-[16px]">Sab</p>
+              <p className="font-semibold text-[#232379] text-[16px]">Min</p>
             </div>
 
             {/* Dates */}
             <div className="grid grid-cols-7 gap-y-4 text-center">
-              {dates.map((date, index) => (
-                <button
-                  key={index}
-                  disabled={!date.valid}
-                  onClick={() => setSelectedTanggal(date.day)}
-                  className={`w-[35px] h-[35px] mx-auto rounded-[10px] text-[18px] transition-all
-                  ${date.faded
-                      ? 'text-[#B7B7E5]'
-                      : 'text-[#232379] font-medium'
-                    }
-                  ${selectedTanggal === date.day
-                      ? 'border border-[#FF7A00]'
-                      : ''
-                    }
-                  ${!date.valid
-                      ? 'cursor-not-allowed opacity-50'
-                      : 'hover:bg-[#ECECFF]'
-                    }
-                `}
-                >
-                  {date.day}
-                </button>
-              ))}
+              <p className="text-[#B7B7E5]">27</p>
+              <p className="text-[#B7B7E5]">28</p>
+              <p className="text-[#B7B7E5]">29</p>
+              <p className="text-[#B7B7E5]">30</p>
+
+              <button className="w-[35px] h-[35px] mx-auto rounded-[10px] text-[18px] text-[#232379]">
+                1
+              </button>
+
+              <p className="text-[#B7B7E5]">2</p>
+              <p className="text-[#B7B7E5]">3</p>
+
+              <p className="text-[#B7B7E5]">4</p>
+              <p className="text-[#B7B7E5]">5</p>
+
+              <button className="w-[35px] h-[35px] mx-auto rounded-[10px] text-[18px] border border-[#FF7A00] text-[#232379] font-medium">
+                6
+              </button>
+
+              <p className="text-[#B7B7E5]">7</p>
+
+              <button className="text-[#232379] text-[18px]">8</button>
+
+              <p className="text-[#B7B7E5]">9</p>
+              <p className="text-[#B7B7E5]">10</p>
+
+              <p className="text-[#B7B7E5]">11</p>
+              <p className="text-[#B7B7E5]">12</p>
+
+              <button className="text-[#232379] text-[18px]">13</button>
+
+              <p className="text-[#B7B7E5]">14</p>
+
+              <button className="text-[#232379] text-[18px]">15</button>
+
+              <p className="text-[#B7B7E5]">16</p>
+              <p className="text-[#B7B7E5]">17</p>
+
+              <p className="text-[#B7B7E5]">18</p>
+              <p className="text-[#B7B7E5]">19</p>
+
+              <button className="text-[#232379] text-[18px]">20</button>
+
+              <p className="text-[#B7B7E5]">21</p>
+
+              <button className="text-[#232379] text-[18px]">22</button>
+
+              <p className="text-[#B7B7E5]">23</p>
+              <p className="text-[#B7B7E5]">24</p>
+
+              <p className="text-[#B7B7E5]">25</p>
+              <p className="text-[#B7B7E5]">26</p>
+
+              <button className="text-[#232379] text-[18px]">27</button>
+
+              <p className="text-[#B7B7E5]">28</p>
+
+              <button className="text-[#232379] text-[18px]">29</button>
+
+              <p className="text-[#B7B7E5]">30</p>
+              <p className="text-[#B7B7E5]">31</p>
             </div>
           </div>
 
           {/* Form */}
           <div className="w-[550px] h-[350px] bg-[#F7F7FB] border border-[#7C7CB4] rounded-[25px] shadow-md px-6 py-5 -mt-4 mr-17">
             {/* Jenis Konsultasi */}
-            <div className="">
+            <div>
               <h1 className="text-[20px] font-bold text-[#232379] mb-3">
                 Pilih Jenis Konsultasi
               </h1>
 
-              <select
-                value={selectedTahap}
-                onChange={(e) => setSelectedTahap(e.target.value)}
-                className="w-full h-[45px] px-4 border border-[#2C4C74] rounded-[8px] outline-none text-[#2C4C74]"
-              >
-                <option value="">Pilih Jenis Konsultasi</option>
-
-                {tahapan.map((item, index) => (
-                  <option key={index} value={item}>
-                    {item}
-                  </option>
-                ))}
+              <select className="w-full h-[45px] px-4 border border-[#2C4C74] rounded-[8px] outline-none text-[#2C4C74]">
+                <option>Pilih Jenis Konsultasi</option>
+                <option>Proposal Penelitian</option>
+                <option>Hasil Penelitian</option>
+                <option>Penyusunan Skripsi</option>
               </select>
             </div>
 
@@ -257,18 +155,12 @@ const dates = [
                 Pilih Jam Konsultasi
               </h1>
 
-              <select
-                value={selectedJam}
-                onChange={(e) => setSelectedJam(e.target.value)}
-                className="w-full h-[45px] px-4 border border-[#2C4C74] rounded-[8px] outline-none text-[#2C4C74]"
-              >
-                <option value="">Pilih Jam Konsultasi</option>
-
-                {jamList.map((jam, index) => (
-                  <option key={index} value={jam}>
-                    {jam}
-                  </option>
-                ))}
+              <select className="w-full h-[45px] px-4 border border-[#2C4C74] rounded-[8px] outline-none text-[#2C4C74]">
+                <option>Pilih Jam Konsultasi</option>
+                <option>10:00 - 11:00</option>
+                <option>11:00 - 12:00</option>
+                <option>13:00 - 14:00</option>
+                <option>14:00 - 15:00</option>
               </select>
             </div>
 
@@ -278,19 +170,12 @@ const dates = [
                 Catatan
               </h1>
 
-              <textarea
-                value={catatan}
-                onChange={(e) => setCatatan(e.target.value)}
-                className="w-full h-[70px] border border-[#7C7CB4] rounded-[8px] resize-none outline-none px-4 py-3"
-              />
+              <textarea className="w-full h-[70px] border border-[#7C7CB4] rounded-[8px] resize-none outline-none px-4 py-3" />
             </div>
 
             {/* Button */}
             <div className="flex justify-center mt-6">
-              <button
-                onClick={handleSubmit}
-                className="w-[170px] h-[60px] bg-[#FF7A00] rounded-full text-white text-[20px] font-bold border border-[#232379] hover:scale-105 transition-all"
-              >
+              <button className="w-[170px] h-[60px] bg-[#FF7A00] rounded-full text-white text-[20px] font-bold border border-[#232379] hover:scale-105 transition-all">
                 Ajukan
               </button>
             </div>

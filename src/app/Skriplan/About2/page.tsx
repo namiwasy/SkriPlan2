@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 export default function page() {
     const router = useRouter();
     return (
-        <div className='min-h-screen' style={{ background: 'linear-gradient(to right, #B8D8F0 0%, #E8E0D0 33%, #FFEDD4 100%)' }}>
+        <div className='min-h-screen' >
             <Navbar6 />
               <img src="/assets/leftarrow.png" 
               alt="About" 
