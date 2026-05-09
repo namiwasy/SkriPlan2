@@ -65,7 +65,7 @@ export default function page() {
             </div>
               {/* Form Login */}
             <div className='mt-10 flex flex-col items-center'>
-             <h1 className='font-poppins text-[#1E3E62] font-bold mr-108 mt-4'>
+             <h1 className='font-poppins text-[#1E3E62] text-xl font-bold mr-106 mt-4'>
                     NIDN
                 </h1>
                 <input
@@ -75,7 +75,7 @@ export default function page() {
                   placeholder='Masukkan NIDN'
                   className='bg-[#F8FDFF] h-13 w-120 px-4 py-2 border border-[#1E3E62] rounded-xl shadow-lg mt-2 font-poppins text-[#1E3E62] focus:outline-none focus:ring-2 focus:ring-[#FF7418]'
                 />
-                 <h1 className='font-poppins text-[#1E3E62] font-bold mr-99 mt-4'>
+                 <h1 className='font-poppins text-[#1E3E62] text-xl font-bold mr-95 mt-4'>
                     Password
                 </h1>
                 <input
@@ -90,12 +90,21 @@ export default function page() {
                     {errors.password}
                   </p>
                 )}
-
+        
             <button 
             onClick={handleLogin}
             className=" font-poppins w-40 h-14 px-6 py-3 mt-8  font-semibold text-[#F8FDFF] text-xl bg-[#FF7418] rounded-full border border-[#1E3E62] hover:scale-110 transition-all duration-400 cursor-pointer shadow-2xl">
             Login
           </button>
+
+          <div className='flex justify-center mt-4'>
+              <h1 className='font-poppins text-[#1E3E62] text-xl font-bold ml-2'>
+                    Lupa Password?
+                </h1>
+                <h1 className='font-poppins text-[#FF7F11] text-xl  font-bold ml-2 cursor-pointer underline hover:scale-110 transition-all duration-400 ' onClick={() => router.push('/Skriplan/Admin/ResetPasswordAdmin')}>
+                    Reset
+                </h1>
+            </div>
             </div>
     </div>
   )

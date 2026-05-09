@@ -241,13 +241,13 @@ export default function Page() {
                     {selectedStudent?.prodi}
                   </p>
                 </div>
+
+                <div className='flex justify-center items-center gap-2 mb-6 text-[#FF7F11] font-semibold'>
+                  <img src="/assets/Icondokumen.png" className="w-5 h-5" />
+                  <span>→ Lihat SK</span>
+                </div>
               </>
             )}
-
-            <div className='flex justify-center items-center gap-2 mb-6 text-[#FF7F11] font-semibold'>
-              <img src="/assets/Icondokumen.png" className="w-5 h-5" />
-              <span>→ Lihat SK</span>
-            </div>
 
             <div className="flex gap-4">
               <button

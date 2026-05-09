@@ -56,7 +56,7 @@ export default function page() {
               <h1 className='font-poppins text-[#1E3E62] text-4xl font-bold ml-2'>
                     Login
                 </h1>
-                <h1 className='font-poppins text-[#1E3E62] text-4xl font-bold'>
+                <h1 className='font-poppins text-[#1E3E62] text-4xl font-bold ml-2'>
                     Skri
                 </h1>
                 <h1 className='font-poppins text-[#FF7F11] text-4xl font-bold'>
@@ -96,6 +96,15 @@ export default function page() {
             className=" font-poppins w-40 h-14 px-6 py-3 mt-8  font-semibold text-[#F8FDFF] text-xl bg-[#FF7418] rounded-full border border-[#1E3E62] hover:scale-110 transition-all duration-400 cursor-pointer shadow-2xl">
             Login
           </button>
+
+          <div className='flex justify-center mt-4'>
+              <h1 className='font-poppins text-[#1E3E62] text-xl font-bold ml-2'>
+                    Lupa Password?
+                </h1>
+                <h1 className='font-poppins text-[#FF7F11] text-xl  font-bold ml-2 cursor-pointer underline hover:scale-110 transition-all duration-400 ' onClick={() => router.push('/Skriplan/User/ResetPassword')}>
+                    Reset
+                </h1>
+            </div>
             </div>
     </div>
   )
